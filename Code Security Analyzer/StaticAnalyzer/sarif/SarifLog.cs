@@ -1,6 +1,6 @@
 ﻿namespace StaticAnalyzer.Sarif
 {
-    internal class Sarif
+    internal class SarifLog
     {
         [JsonPropertyName("$schema")]
         public string? Schema { get; init; }
