@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Text;
 
 namespace StaticAnalyzer
 {
@@ -6,30 +7,29 @@ namespace StaticAnalyzer
     {
         readonly Process _process;
 
-        public Stream? InputStream => _process.StartInfo.RedirectStandardInput ? _process.StandardInput.BaseStream : null;
+        public StreamWriter? Input => _process.StartInfo.RedirectStandardInput ? _process.StandardInput : null;
 
-        public Stream? OutputStream => _process.StartInfo.RedirectStandardOutput ? _process.StandardOutput.BaseStream : null;
+        public StreamReader? OutputStream => _process.StartInfo.RedirectStandardOutput ? _process.StandardOutput : null;
 
-        public Stream? ErrorStream => _process.StartInfo.RedirectStandardError ? _process.StandardError.BaseStream : null;
+        public StreamReader? ErrorStream => _process.StartInfo.RedirectStandardError ? _process.StandardError : null;
 
         public int ExitedCode => _process.ExitCode;
 
-        public ExternalCall(string path, string args, RedirectOption option)
+        public ExternalCall(string path, string? args = null, RedirectOption option = RedirectOption.None)
         {
             //Console.WriteLine(path + " " + args);
-            _process = new()
+            ProcessStartInfo psi = new()
             {
-                StartInfo = new()
-                {
-                    FileName = path,
-                    Arguments = args,
-                    UseShellExecute = false,
-                    CreateNoWindow = true,
-                    RedirectStandardInput = option.HasFlag(RedirectOption.StandardInput),
-                    RedirectStandardOutput = option.HasFlag(RedirectOption.StandardOutput),
-                    RedirectStandardError = option.HasFlag(RedirectOption.StandardError)
-                }
+                FileName = path,
+                Arguments = args,
+                UseShellExecute = false,
+                CreateNoWindow = true,
+                RedirectStandardInput = option.HasFlag(RedirectOption.StandardInput),
+                RedirectStandardOutput = option.HasFlag(RedirectOption.StandardOutput),
+                RedirectStandardError = option.HasFlag(RedirectOption.StandardError)
             };
+
+            _process = new() { StartInfo = psi };
             _process.Start();
         }
 

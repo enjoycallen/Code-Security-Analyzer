@@ -6,64 +6,85 @@ var sourceArgument = new Argument<string>(
     description: "源程序路径"
 );
 
-var levelOption = new Option<CheckLevel>(
-    name: "--level",
+var languageOption = new Option<SupportedLanguages>(
+    aliases: ["--language"],
+    description: "源程序语言"
+)
+{
+    IsRequired = true
+};
+
+var checkLevelOption = new Option<Level?>(
+    aliases: ["--level", "-l"],
     description: "检查级别"
 );
-levelOption.SetDefaultValue(CheckLevel.Error);
+
+var confidenceOption = new Option<Level>(
+    aliases: ["--confidence", "-c"],
+    description: "置信度"
+);
+confidenceOption.SetDefaultValue(Level.Low);
 
 var formatOption = new Option<ReportFormat>(
-    name: "--format",
+    aliases: ["--format", "-f"],
     description: "报告格式"
 );
-formatOption.SetDefaultValue(ReportFormat.Text);
+formatOption.SetDefaultValue(ReportFormat.txt);
 
 var styleOption = new Option<ReportStyle>(
-    name: "--style",
+    aliases: ["--style", "-s"],
     description: "报告样式"
 );
-styleOption.SetDefaultValue(ReportStyle.Gcc);
+styleOption.SetDefaultValue(ReportStyle.gcc);
 
 var outputOption = new Option<string?>(
-    name: "--output",
+    aliases: ["--output", "-o"],
     description: "输出文件"
 );
 
 var rootCommand = new RootCommand("Codesec")
 {
     sourceArgument,
-    levelOption,
+    languageOption,
+    checkLevelOption,
+    confidenceOption,
     formatOption,
     styleOption,
     outputOption
 };
+rootCommand.Description = @"Code Security Analyzer
+C/C++/Python 代码安全性分析工具";
 
-rootCommand.SetHandler(static async (string source, CheckLevel level, ReportFormat format, ReportStyle style,string? output) =>
+rootCommand.SetHandler(static async (string source, SupportedLanguages language, Level? checkLevel, Level confidence, ReportFormat format, ReportStyle style, string? output) =>
 {
-    /*
-    Console.WriteLine($"源程序路径：{source}");
-    Console.WriteLine($"检查级别：{level}");
-    Console.WriteLine($"报告格式：{format}");
-    Console.WriteLine($"报告样式：{style}");
-    Console.WriteLine($"输出文件：{output}");
-    */
-
     try
     {
-        using var analysis = new Cppcheck(source, new()
+        using var analysis = new Analysis(source, new()
         {
-            Level = level,
+            Language = language,
+            CheckLevel = checkLevel,
+            Confidence = confidence,
             Format = format,
             Style = style,
         });
 
-        IReportGenerable report = analysis;
-        await (output is null ? report.WriteToConsoleAsync() : report.SaveToFileAsync(output));
+        if (output is null)
+        {
+            await analysis.PrintAsync();
+        }
+        else
+        {
+            if (File.Exists(output))
+            {
+                File.Delete(output);
+            }
+            await analysis.SaveAsync(output);
+        }
     }
     catch (Exception ex)
     {
         Console.WriteLine(ex.Message);
     }
-}, sourceArgument, levelOption, formatOption, styleOption,outputOption);
+}, sourceArgument, languageOption, checkLevelOption, confidenceOption, formatOption, styleOption, outputOption);
 
 await rootCommand.InvokeAsync(args);
