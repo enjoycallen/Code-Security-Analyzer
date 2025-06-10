@@ -1,0 +1,29 @@
+ #      Precompiled CodeQL query
+---
+format:
+- 202308110
+creator: 2.21.2
+name: LinesOfCode.ql
+dbscheme: 5af903da088e3746aa283700a43a779302453523
+stages:
+- offset: 1
+results:
+  '#select':
+    resultArranger: 10i
+inputsDigest: 279600e1a44b830652752601fcf6cc85
+metadata:
+  name: Total lines of Python code in the database
+  description: |-
+    The total number of lines of Python code across all files, including
+       external libraries and auto-generated files. This is a useful metric of the size of a
+       database. This query counts the lines of code, excluding whitespace or comments.
+  kind: metric
+  tags: |-
+    summary
+           telemetry
+  id: py/summary/lines-of-code
+
+---
+...
+dQLXst:20231115xÚÕ”ÍŠÛ0ÇïºõÔøP(DŽÙ¯Ã^–”ºÝ‚/¥ŒbO5’ìH2]÷Ôë>BcÙ¬d{Á)Íi/íeæÿ›ÑÌxðr¹Ä„Ìè®Ö@mkXú½¶{ê@kó²®àèì…Ý‚§(÷®·½û æ½çù2o:¿«ÍüÐ‚•àÈÙ>í Óc™r’‘JFQÉµ½ÿ˜JÑŒ0r6U2h¤Z»rfOo8ÿŠe…aÁxÜtÅÎCËØ+{zËùúx×šÒËÚD$sÎ>÷DWÜÖU«úXQ¢<}?	–Õ}¤ro¥Ù~Ö²_qžG°¬Ûá‘X­’f’+ÿk®²Ö…7V$ú_ôô^š?C*YúBzÐ|}‡ûÆNÈŸ§ÉFxvZÅÃiØyí'ä¯Ó¤ï¹­ÐÒ;ôíâŒ³­ÒËóûŸ®ãè§·¶¡tä Ôì-¸Á~'¶àZåñ¨^]›õ‡&>¶zönó!.ÉÝæ&¶Ç’Jº°U’¥‹óÍ&Ý ÇPÅV<ÅìÅ¹SÐï[0ÎÑŠg ÿ·ZÛÑIa¨³kÎ9Ï²hx4é‹GQ„þ×ê",¤F%æ‚-Â¨‰,ã’1´½Ì˜k9[±U˜|RÖ
+'ÂOÈ'±ê]³ñŽ^ÿ¡Ûù

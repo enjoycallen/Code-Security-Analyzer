@@ -1,0 +1,101 @@
+文件操作与I/O
+读取和写入文本文件：使用 open() 函数进行文本文件的读取与写入。
+读取 CSV 文件：使用 pandas 库读取和解析 CSV 文件。
+写入 CSV 文件：使用 csv 库将数据写入 CSV 文件。
+读取 JSON 文件：使用 json 库加载和读取 JSON 格式的文件。
+写入 JSON 文件：使用 json 库将数据写入 JSON 文件。
+读取二进制文件：使用 open() 读取二进制文件。
+文件内容加密和解密：使用 cryptography 库对文件进行加密和解密。
+实现文件备份：使用 shutil 库进行文件的备份和复制。
+压缩与解压文件：使用 zipfile 库进行文件的压缩与解压。
+递归遍历目录：使用 os 和 os.path 遍历目录和文件。
+
+网络编程
+发送 HTTP 请求：使用 requests 库发送 HTTP 请求并接收响应。
+实现简单的 TCP 客户端和服务器：使用 socket 库实现 TCP 客户端和服务器通信。
+实现 WebSocket 客户端：使用 websockets 库实现 WebSocket 客户端。
+发送电子邮件（SMTP）：使用 smtplib 发送电子邮件。
+接收电子邮件（POP3）：使用 poplib 接收电子邮件。
+上传和下载文件（FTP）：使用 ftplib 上传和下载文件。
+HTTP 请求头管理：使用 requests 库自定义 HTTP 请求头。
+HTTP 请求响应数据解析：使用 beautifulsoup4 库解析 HTML 内容。
+实现文件上传功能：使用 requests 上传文件到 Web 服务器。
+GET 和 POST 请求示例：使用 requests 发送 GET 和 POST 请求。
+
+数据库操作
+连接 SQLite 数据库：使用 sqlite3 库连接 SQLite 数据库并执行查询。
+执行 MySQL 查询：使用 mysql-connector-python 库连接 MySQL 数据库。
+连接 PostgreSQL 数据库：使用 psycopg2 库连接 PostgreSQL 数据库。
+从数据库读取数据并保存为 CSV 文件：使用 pandas 将数据存储为 CSV 文件。
+执行批量插入操作：使用 mysql-connector-python 进行批量插入数据。
+数据库备份和恢复：使用 subprocess 执行数据库备份和恢复操作。
+数据库事务管理：使用 sqlite3 实现事务管理。
+创建和删除数据库表：使用 sqlite3 操作数据库表。
+
+图形界面开发
+创建简单的窗口应用：使用 tkinter 创建一个简单的窗口应用。
+按钮事件绑定：使用 tkinter 处理按钮点击事件。
+显示文本标签：使用 tkinter 在窗口中显示标签文本。
+创建多标签页界面：使用 PyQt 创建具有多个标签页的界面。
+文件选择对话框：使用 tkinter 创建文件选择对话框。
+进度条实现：使用 tkinter 创建一个进度条。
+显示图片：使用 PIL 库在窗口中显示图像。
+绘制基本图形（矩形、圆形）：使用 tkinter 或 PyQt 绘制基本图形。
+创建下拉菜单：使用 tkinter 或 PyQt 创建下拉菜单。
+
+图像处理
+图像加载与保存：使用 Pillow（PIL）库加载和保存图像文件。
+图像大小调整：使用 Pillow 进行图像的缩放和裁剪。
+图像旋转与翻转：使用 Pillow 进行图像的旋转和翻转操作。
+图像合并：使用 Pillow 合并两张图像。
+图像颜色转换（RGB到灰度）：使用 OpenCV 转换图像的颜色。
+二维码生成与解码：使用 qrcode 库生成二维码，使用 pyzbar 解码二维码。
+图像去噪：使用 OpenCV 进行图像去噪处理。
+
+数据分析与处理
+数据清洗与预处理：使用 pandas 对数据进行清洗和预处理。
+数据筛选与分组：使用 pandas 进行数据筛选、分组和聚合操作。
+数据统计分析：使用 pandas 进行数据统计分析和描述性统计。
+数据可视化（柱状图、折线图）：使用 matplotlib 创建数据的可视化图表。
+数据可视化（饼图）：使用 matplotlib 创建饼图。
+时间序列数据处理：使用 pandas 处理和分析时间序列数据。
+生成随机数据：使用 numpy 生成随机数据用于测试。
+处理缺失数据：使用 pandas 填充或删除缺失数据。
+数据导出为 Excel 文件：使用 pandas 将数据导出为 Excel 文件。
+
+自动化与脚本编写
+自动化处理文件重命名：使用 os 和 shutil 自动化文件重命名。
+批量图像处理：使用 Pillow 批量处理图像（如批量裁剪或调整大小）。
+自动化 Web 抓取：使用 BeautifulSoup 和 requests 自动化抓取网页内容。
+自动化填充表单：使用 selenium 库自动化浏览器操作，填写网页表单。
+文件清理脚本：使用 os 和 shutil 清理特定类型的文件。
+生成日志文件：使用 logging 库自动生成日志文件。
+批量下载文件：使用 requests 库批量下载网络上的文件。
+
+机器学习与人工智能
+训练简单的分类模型：使用 scikit-learn 训练一个简单的分类模型。
+模型评估与优化：使用 scikit-learn 进行模型评估和交叉验证。
+使用 K-means 进行聚类分析：使用 scikit-learn 进行 K-means 聚类。
+处理文本数据：使用 NLTK 或 spaCy 进行文本数据的处理。
+图像识别模型（使用预训练模型）：使用 TensorFlow 或 Keras 加载并使用预训练的图像识别模型。
+自然语言生成：使用 transformers 生成自然语言文本。
+
+多线程与并发编程
+多线程并行任务：使用 threading 库实现多个线程并行处理任务。
+多进程任务处理：使用 multiprocessing 库进行多进程任务处理。
+线程池管理：使用 concurrent.futures.ThreadPoolExecutor 管理线程池。
+任务队列管理：使用 queue 库管理多线程任务队列。
+线程间同步：使用 threading 库中的 Lock 或 Semaphore 实现线程间同步。
+进程间通信：使用 multiprocessing.Queue 进行进程间通信。
+异步编程：使用 asyncio 实现异步编程。
+异步 HTTP 请求：使用 aiohttp 库进行异步 HTTP 请求。
+并行计算与任务分配：使用 joblib 进行并行计算。
+
+系统操作
+获取系统信息：使用 psutil 获取系统的 CPU、内存和磁盘使用情况。
+操作系统信息获取：使用 os 或 platform 获取操作系统版本信息。
+注册表操作：使用 winreg 操作 Windows 注册表。
+环境变量管理：使用 os.environ 管理系统环境变量。
+执行外部命令：使用 subprocess 执行外部系统命令。
+网络接口信息获取：使用 psutil 获取网络接口信息。
+获取当前日期和时间：使用 datetime 获取当前日期和时间，并进行格式化。

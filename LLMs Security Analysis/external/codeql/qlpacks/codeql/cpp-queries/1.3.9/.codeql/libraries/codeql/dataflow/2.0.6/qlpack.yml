@@ -1,0 +1,15 @@
+---
+library: true
+warnOnImplicitThis: true
+compileForOverlayEval: false
+name: codeql/dataflow
+version: 2.0.6
+buildMetadata:
+  sha: a46f8fb0d9533114f3c634d7ec1e09f4c8b1c505
+  cliVersion: 2.21.2
+dependencies:
+  codeql/ssa: 1.1.1
+  codeql/typetracking: 2.0.6
+  codeql/util: 2.0.9
+groups:
+ - shared

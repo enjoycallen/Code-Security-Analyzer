@@ -1,0 +1,86 @@
+文件操作与I/O
+读取和写入文本文件：使用 <fstream> 进行基本的文件读写操作。
+文件内容加密与解密：使用 OpenSSL 对文件内容进行加密和解密。
+日志文件管理：使用 <fstream> 编写一个简单的日志管理系统。
+文件路径操作：使用 Boost.Filesystem 库获取文件路径信息。
+压缩文件处理：使用 zlib 进行文件的压缩与解压。
+读取CSV文件：使用 <fstream> 读取 CSV 文件，并解析其内容。
+JSON 文件读取和写入：使用 nlohmann/json 读取和写入 JSON 文件。
+XML 文件解析与生成：使用 TinyXML2 库解析 XML 文件。
+二进制文件读取与写入：使用 <fstream> 进行二进制文件操作。
+文件备份：使用 Boost.Filesystem 完成文件的备份功能。
+
+网络编程
+HTTP 请求发送：使用 libcurl 发送 HTTP 请求并接收响应。
+FTP 上传和下载：使用 libcurl 库实现 FTP 文件上传和下载。
+TCP 客户端与服务器实现：使用 Winsock 库实现 TCP 网络通信。
+UDP 客户端与服务器实现：使用 Winsock 实现 UDP 网络通信。
+WebSocket 客户端：使用 libwebsockets 库实现 WebSocket 客户端。
+SMTP 邮件发送：使用 libcurl 发送电子邮件（SMTP）。
+获取网站内容：使用 libcurl 获取网站的 HTML 内容。
+解析 HTTP 响应：使用 Boost.Beast 解析 HTTP 响应。
+构建简单的 HTTP 服务器：使用 Boost.Asio 创建一个简单的 HTTP 服务器。
+FTP 文件操作：使用 WinINet 库进行 FTP 文件操作。
+
+图形与界面开发
+创建简单的图形窗口：使用 WinAPI 创建一个基本的窗口。
+按钮点击事件处理：使用 WinAPI 编写一个按钮点击事件处理函数。
+绘制图形（圆形、矩形）：使用 WinAPI 在窗口中绘制基本图形。
+创建自定义控件：使用 WinAPI 创建自定义按钮、文本框等控件。
+简单的图形界面应用：使用 Qt 库创建一个带有按钮的简单图形界面。
+在窗口中显示文本：使用 WinAPI 在窗口中显示字符串。
+使用 SDL2 绘制图形：使用 SDL2 绘制基本的 2D 图形。
+图像加载与显示：使用 SDL2 加载并显示图像文件。
+
+数据库操作
+SQLite 数据库操作：使用 SQLite3 库进行数据库的增删查改。
+连接 PostgreSQL 数据库：使用 libpqxx 库连接 PostgreSQL 数据库。
+读取和插入 JSON 数据到数据库：使用 nlohmann/json 和 SQLite3 结合操作。
+ORM 操作（对象关系映射）：使用 SOCI 库实现简单的 ORM 操作。
+数据库事务管理：使用 SQLite3 库管理事务。
+生成数据库备份文件：使用 SQLite3 创建数据库的备份文件。
+
+多线程与并发编程
+创建线程：使用 std::thread 创建和管理线程。
+线程同步（互斥量）：使用 std::mutex 对共享资源进行同步。
+条件变量实现：使用 std::condition_variable 进行线程间的同步。
+线程池管理：使用 Boost.Asio 创建和管理线程池。
+并行算法应用：使用 std::async 和 std::future 执行并行计算。
+原子操作（无锁编程）：使用 std::atomic 进行原子操作。
+信号量（Semaphore）：使用 std::semaphore 管理信号量。
+任务队列管理：使用 std::queue 和 std::mutex 实现线程安全的任务队列。
+线程局部存储：使用 thread_local 进行线程局部存储管理。
+
+加密与安全
+数据加密和解密：使用 OpenSSL 库进行 AES 加密和解密。
+SHA256 哈希生成：使用 OpenSSL 库生成数据的 SHA256 哈希。
+生成 RSA 密钥对：使用 OpenSSL 生成 RSA 公私钥对。
+证书验证：使用 OpenSSL 进行 SSL/TLS 证书验证。
+文件内容哈希计算：使用 OpenSSL 计算文件的 MD5 或 SHA 哈希。
+实现简单的密码存储系统：使用 OpenSSL 对用户密码进行加密存储。
+对称加密实现：使用 OpenSSL 库实现对称加密。
+加密文件传输（SSL/TLS）：使用 OpenSSL 实现加密的文件传输功能。
+生成和验证 JWT：使用 jwt-cpp 库生成和验证 JSON Web Token。
+实现数字签名：使用 OpenSSL 实现数据的数字签名。
+
+音频与视频处理
+音频播放：使用 SFML 库播放音频文件。
+视频播放：使用 FFmpeg 库播放视频文件。
+音频录制：使用 PortAudio 库进行音频录制。
+视频解码：使用 FFmpeg 解码视频流。
+音频压缩：使用 LAME 编码器压缩音频文件。
+视频截图：使用 FFmpeg 从视频中提取图片帧。
+实时视频处理：使用 OpenCV 实时处理视频流。
+视频合并与剪辑：使用 FFmpeg 库进行视频合并和剪辑。
+视频特效应用：使用 OpenCV 库应用视频特效。
+
+图像处理
+图像加载与显示：使用 OpenCV 加载和显示图像。
+图像滤镜（模糊、锐化）：使用 OpenCV 实现图像滤镜效果。
+图像格式转换：使用 OpenCV 将图像格式转换。
+图像分割：使用 OpenCV 库进行图像分割。
+图像旋转与缩放：使用 OpenCV 进行图像旋转和缩放。
+图像匹配与特征点提取：使用 OpenCV 提取图像特征点并进行匹配。
+图像水印添加：使用 OpenCV 在图像上添加水印。
+二维码生成：使用 libqrencode 库生成二维码。
+图像压缩与优化：使用 libjpeg 压缩图像文件。

@@ -1,0 +1,28 @@
+---
+library: true
+warnOnImplicitThis: true
+compileForOverlayEval: false
+name: codeql/cpp-all
+version: 4.3.0
+buildMetadata:
+  sha: a46f8fb0d9533114f3c634d7ec1e09f4c8b1c505
+  cliVersion: 2.21.2
+dependencies:
+  codeql/dataflow: 2.0.6
+  codeql/mad: 1.0.22
+  codeql/rangeanalysis: 1.0.22
+  codeql/ssa: 1.1.1
+  codeql/tutorial: 1.0.22
+  codeql/typeflow: 1.0.22
+  codeql/util: 2.0.9
+  codeql/xml: 1.0.22
+dbscheme: semmlecode.cpp.dbscheme
+extractor: cpp
+upgrades: upgrades
+groups:
+ - cpp
+dataExtensions:
+ - ext/*.model.yml
+ - ext/generated/*.model.yml
+ - ext/deallocation/*.model.yml
+ - ext/allocation/*.model.yml
